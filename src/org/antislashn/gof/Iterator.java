@@ -1,7 +1,7 @@
 package org.antislashn.gof;
 
-public interface Iterator {
+public interface Iterator<T> {
 	boolean hasNext();
-	int get();
+	T get();
 
 }

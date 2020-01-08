@@ -1,15 +1,14 @@
 package org.antislashn.gof;
 
-public class Tableau implements List{
+public class Tableau implements List<Integer>{
 	private int[] tab;
 	private int size;
 	
 	public Tableau(int size) {
 		tab = new int[size];
 	}
-	
 	@Override
-	public boolean add(int t) {
+	public boolean add(Integer t) {
 		if(size<tab.length) {
 			tab[size++] = t;
 			return true;
@@ -18,7 +17,7 @@ public class Tableau implements List{
 	}
 
 	@Override
-	public Iterator iterator() {
+	public Iterator<Integer> iterator() {
 		return new TableauIterator(this);
 	}
 	@Override
@@ -31,7 +30,7 @@ public class Tableau implements List{
 		size=0;
 	}
 	
-	private class TableauIterator implements Iterator{
+	private class TableauIterator implements Iterator<Integer>{
 			private Tableau tableau;
 			private int index = 0;
 
@@ -45,7 +44,7 @@ public class Tableau implements List{
 		}
 
 		@Override
-		public int get() {
+		public Integer get() {
 			return tableau.tab[index++];
 		}
 		
